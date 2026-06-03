@@ -1,0 +1,50 @@
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 90px var(--section-x);
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.alt {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.cta {
+  padding: 110px var(--section-x);
+  text-align: center;
+  overflow: hidden;
+}
+
+.dividerWrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--section-x);
+  position: relative;
+  z-index: 1;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-b),
+    var(--border),
+    var(--border-b),
+    transparent
+  );
+}
+
+@media (max-width: 900px) {
+  .section,
+  .cta {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}

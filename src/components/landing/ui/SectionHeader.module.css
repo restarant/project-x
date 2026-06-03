@@ -1,0 +1,56 @@
+.header {
+  margin-bottom: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label {
+  font-family: var(--font-space-mono), "Space Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue-l);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-syne), "Syne", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.625rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.title :global(em) {
+  font-style: normal;
+  color: var(--blue-l);
+}
+
+.titleCompact {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+}
+
+.description {
+  font-size: 15.5px;
+  color: var(--txt2);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 50px;
+}
+
+.descNone .description {
+  margin-bottom: 0;
+}
+
+.descTight .description {
+  margin-bottom: 44px;
+}

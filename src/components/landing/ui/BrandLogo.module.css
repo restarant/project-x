@@ -1,0 +1,59 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mark {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(145deg, var(--blue-l), var(--blue));
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  box-shadow: 0 4px 16px var(--blue-glow);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.logo:hover .mark {
+  transform: scale(1.05) rotate(-3deg);
+  box-shadow: 0 6px 24px var(--blue-glow);
+}
+
+.name {
+  font-family: var(--font-syne), "Syne", sans-serif;
+  font-weight: 800;
+  color: var(--txt);
+  letter-spacing: -0.4px;
+}
+
+.accent {
+  color: var(--blue-l);
+}
+
+.sm .mark {
+  width: 26px;
+  height: 26px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+.sm .name {
+  font-size: 15px;
+}
+
+.md .name {
+  font-size: 18px;
+}
+
+.lg .name {
+  font-size: 20px;
+}
+
+.lg .mark {
+  width: 36px;
+  height: 36px;
+}

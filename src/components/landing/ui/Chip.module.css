@@ -1,0 +1,79 @@
+.chip {
+  font-family: var(--font-space-mono), "Space Mono", monospace;
+  font-size: 9px;
+  color: var(--txt3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 8px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue-dim);
+  border: 1px solid var(--border-b);
+  border-radius: 100px;
+  padding: 5px 14px 5px 8px;
+  margin-bottom: 26px;
+  backdrop-filter: blur(8px);
+}
+
+.eyebrowDot {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(145deg, var(--blue-l), var(--blue));
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+}
+
+.eyebrowText {
+  font-family: var(--font-space-mono), "Space Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--blue-l);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.pill {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition:
+    border-color 0.25s var(--ease-out),
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out);
+}
+
+.pill:hover {
+  border-color: var(--border-b);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.pillValue {
+  font-family: var(--font-space-mono), "Space Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--txt);
+}
+
+.pillLabel {
+  font-size: 12px;
+  color: var(--txt3);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}

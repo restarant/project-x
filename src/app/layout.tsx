@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Space_Mono, Syne } from "next/font/google";
+import { DM_Sans, Oi, Space_Mono, Syne } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({
@@ -18,6 +18,12 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+});
+
+const oi = Oi({
+  variable: "--font-oi",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -41,7 +47,7 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/assets/icons/restro.svg" />
       </head>
       <body
-        className={`${syne.variable} ${spaceMono.variable} ${dmSans.variable} antialiased`}
+        className={`${syne.variable} ${spaceMono.variable} ${dmSans.variable} ${oi.variable} antialiased`}
         suppressHydrationWarning
       >
         {children}

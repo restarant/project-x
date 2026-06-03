@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-space-mono);
+  --font-display: var(--font-oi);
 }
 
 html {

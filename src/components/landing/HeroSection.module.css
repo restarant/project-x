@@ -1,8 +1,9 @@
 .hero {
   position: relative;
-  padding: 148px var(--section-x) 100px;
-  max-width: var(--max-w);
-  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(64px + 48px) var(--section-x) 80px;
   overflow: hidden;
   z-index: 1;
 }
@@ -70,6 +71,9 @@
   align-items: center;
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
 }
 
 .title {
@@ -115,11 +119,17 @@
 
 @media (max-width: 900px) {
   .hero {
-    padding-top: 110px;
-    padding-bottom: 60px;
+    min-height: 100dvh;
+    padding: calc(64px + 32px) var(--section-x) 48px;
   }
   .inner {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: calc(64px + 24px) var(--section-x) 32px;
   }
 }

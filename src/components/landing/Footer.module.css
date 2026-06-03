@@ -15,9 +15,9 @@
 }
 
 .logo {
-  font-family: var(--font-syne), sans-serif;
+  font-family: var(--font-oi), "Oi", serif;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 400;
   margin: 0;
 }
 

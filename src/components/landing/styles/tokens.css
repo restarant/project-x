@@ -1,0 +1,88 @@
+.landing {
+  --bg: #06080f;
+  --bg2: #090d18;
+  --surface: #101828;
+  --surface2: #162035;
+  --blue: #2563eb;
+  --blue-l: #3b82f6;
+  --blue-glow: rgba(37, 99, 235, 0.32);
+  --blue-dim: rgba(37, 99, 235, 0.12);
+  --border: rgba(255, 255, 255, 0.07);
+  --border-b: rgba(37, 99, 235, 0.28);
+  --txt: #eef0f6;
+  --txt2: #8896ab;
+  --txt3: #3d4f67;
+  --green: #22c55e;
+  --amber: #fbbf24;
+  --red: #f87171;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --section-x: 60px;
+  --max-w: 1280px;
+
+  position: relative;
+  min-height: 100vh;
+  font-family: var(--font-dm-sans), "DM Sans", sans-serif;
+  background: var(--bg);
+  color: var(--txt);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.landing::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent);
+}
+
+.landing::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.landing ::selection {
+  background: rgba(37, 99, 235, 0.35);
+  color: var(--txt);
+}
+
+.landing ::-webkit-scrollbar {
+  width: 4px;
+}
+.landing ::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+.landing ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--blue-l), var(--blue));
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .landing {
+    --section-x: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing *,
+  .landing *::before,
+  .landing *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

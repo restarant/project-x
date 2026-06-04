@@ -1,0 +1,102 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition:
+    background 0.25s var(--ease-out),
+    border-color 0.25s var(--ease-out),
+    color 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out),
+    transform 0.25s var(--ease-out);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--blue-l);
+  outline-offset: 2px;
+}
+
+.ghost {
+  padding: 8px 18px;
+  border: 1px solid var(--border-b);
+  font-size: 13px;
+  color: var(--blue-l);
+  background: transparent;
+}
+
+.ghost:hover {
+  background: var(--blue-dim);
+  transform: translateY(-1px);
+}
+
+.fill {
+  padding: 8px 20px;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  background: var(--blue);
+  box-shadow: 0 0 24px var(--blue-glow);
+}
+
+.fill:hover {
+  background: var(--blue-l);
+  box-shadow: 0 0 36px var(--blue-glow);
+  transform: translateY(-1px);
+}
+
+.primary {
+  padding: 13px 26px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
+  box-shadow: 0 4px 24px var(--blue-glow), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+
+.primary:hover {
+  background: linear-gradient(135deg, var(--blue-l) 0%, var(--blue) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px var(--blue-glow);
+}
+
+.secondary {
+  padding: 13px 22px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--txt2);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.secondary:hover {
+  border-color: var(--border-b);
+  color: var(--txt);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pricing {
+  margin-top: 22px;
+  padding: 11px;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--txt2);
+  text-align: center;
+}
+
+.pricing:hover {
+  border-color: var(--blue-l);
+  color: var(--txt);
+}

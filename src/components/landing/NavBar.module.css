@@ -1,0 +1,406 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--section-x);
+  background: rgba(6, 8, 15, 0.72);
+  backdrop-filter: blur(20px) saturate(1.2);
+  border-bottom: 1px solid transparent;
+  transition:
+    background 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out);
+}
+
+.scrolled {
+  background: rgba(6, 8, 15, 0.92);
+  border-bottom-color: var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.navAboveMenu {
+  z-index: 1101;
+  background: rgba(6, 8, 15, 0.94);
+  border-bottom-color: var(--border);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.link {
+  padding: 8px 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--txt2);
+  border-radius: 7px;
+  text-decoration: none;
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+
+.link:hover {
+  color: var(--txt);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menuBtn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.menuBtn span {
+  display: block;
+  height: 2px;
+  background: var(--txt);
+  border-radius: 2px;
+  transition: transform 0.3s var(--ease-out), opacity 0.2s;
+}
+
+.menuOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menuOpen span:nth-child(2) {
+  opacity: 0;
+}
+.menuOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* —— Full-screen blur + stacked menu (reference layout) —— */
+
+.menuOverlay {
+  --nav-h: 64px;
+  --menu-gap: 8px;
+  --menu-nav-size: clamp(1.25rem, 4vw, 1.55rem);
+  --menu-meta-size: 11px;
+  backdrop-filter: blur(24px);
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: calc(var(--nav-h) + var(--menu-gap)) 20px 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-out);
+}
+
+.menuOverlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Full-screen frosted glass */
+.menuBackdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .menuBackdrop {
+    background: rgba(6, 8, 15, 0.85);
+  }
+}
+
+.menuStack {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(340px, 92vw);
+  max-height: calc(100dvh - var(--nav-h) - var(--menu-gap) - 20px);
+  transform: translateY(-6px) scale(0.98);
+  transition: transform 0.4s var(--ease-out);
+}
+
+.menuOverlayOpen .menuStack {
+  transform: translateY(0) scale(1);
+}
+
+.menuSegment {
+  border: 1px solid var(--border);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Top pill — logo + close */
+.menuTopBar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: rgba(8, 12, 22, 0.94);
+}
+
+.menuLogo {
+  min-width: 0;
+}
+
+.menuClose {
+  padding: 4px 0;
+  font-family: var(--font-dm-sans), "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--txt);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.menuClose:hover {
+  color: var(--blue-l);
+}
+
+/* Center glass panel — nav only */
+.menuGlass {
+  flex: 1;
+  min-height: clamp(260px, 52vh, 480px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(28px, 6vw, 48px) 20px;
+  border-radius: 24px;
+  background: rgba(14, 20, 34, 0.42);
+  backdrop-filter: blur(36px) saturate(1.45);
+  -webkit-backdrop-filter: blur(36px) saturate(1.45);
+  overflow-y: auto;
+}
+
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+.menuItem {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: clamp(8px, 2.5vw, 12px);
+  padding: clamp(5px, 1.2vw, 8px) 10px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.menuItem:hover {
+  opacity: 0.85;
+}
+
+.menuLabel {
+  font-family: var(--font-syne), "Syne", sans-serif;
+  font-size: var(--menu-nav-size);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--txt);
+}
+
+.menuMeta {
+  font-family: var(--font-dm-sans), "DM Sans", sans-serif;
+  font-size: var(--menu-meta-size);
+  font-weight: 400;
+  color: var(--txt2);
+  white-space: nowrap;
+  transform: translateY(-0.15em);
+}
+
+/* Footer pills — darker, opaque */
+.menuFooterLegal {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: rgba(8, 12, 22, 0.94);
+}
+
+.menuLegalLink {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--txt3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.menuLegalLink:hover {
+  color: var(--txt2);
+}
+
+.menuFooterLocales {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 26px 15px;
+  border-radius: 999px;
+  background: rgba(8, 12, 22, 0.94);
+}
+
+.localeBtn {
+  padding: 4px 8px;
+  font-family: var(--font-space-mono), "Space Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--txt2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.localeBtn:hover {
+  color: var(--txt);
+}
+
+.localeActive {
+  color: var(--blue-l);
+}
+
+@media (min-width: 901px) {
+  .menuOverlay {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .links,
+  .actions {
+    display: none;
+  }
+  .menuBtn {
+    display: flex;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+  .menuOverlay {
+    --menu-nav-size: clamp(1.35rem, 3vw, 1.6rem);
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .menuStack {
+    width: min(360px, 88vw);
+  }
+
+  .menuGlass {
+    min-height: clamp(300px, 55vh, 520px);
+  }
+}
+
+/* Small phones */
+@media (max-width: 600px) {
+  .menuOverlay {
+    --menu-nav-size: clamp(1.15rem, 5vw, 1.4rem);
+    --menu-meta-size: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .menuStack {
+    width: min(100%, 340px);
+  }
+
+  .menuGlass {
+    border-radius: 22px;
+    min-height: clamp(240px, 50vh, 440px);
+  }
+
+  .menuTopBar,
+  .menuFooterLegal,
+  .menuFooterLocales {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* Narrow phones */
+@media (max-width: 480px) {
+  .menuOverlay {
+    --menu-nav-size: clamp(1.05rem, 5.5vw, 1.25rem);
+    --menu-meta-size: 9px;
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+
+  .menuStack {
+    width: 100%;
+    gap: 6px;
+  }
+
+  .menuGlass {
+    border-radius: 20px;
+    padding: 24px 16px;
+  }
+
+  .menuClose {
+    font-size: 10px;
+  }
+
+  .menuLegalLink {
+    font-size: 10px;
+  }
+
+  .localeBtn {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .menuOverlay {
+    --menu-nav-size: 1rem;
+  }
+
+  .menuItem {
+    gap: 6px;
+  }
+}

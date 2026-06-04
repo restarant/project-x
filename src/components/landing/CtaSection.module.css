@@ -1,0 +1,64 @@
+.cta {
+  position: relative;
+}
+
+.blob {
+  position: absolute;
+  width: 900px;
+  height: 520px;
+  background: radial-gradient(ellipse, rgba(37, 99, 235, 0.22) 0%, transparent 68%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: breathe 8s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-syne), sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
+  line-height: 1.05;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--blue-l);
+}
+
+.text {
+  font-size: 15.5px;
+  color: var(--txt2);
+  line-height: 1.7;
+  margin-bottom: 34px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}

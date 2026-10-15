@@ -3,12 +3,13 @@
   --bg2: #090d18;
   --surface: #101828;
   --surface2: #162035;
-  --blue: #2563eb;
-  --blue-l: #3b82f6;
-  --blue-glow: rgba(37, 99, 235, 0.32);
-  --blue-dim: rgba(37, 99, 235, 0.12);
+  --accent: #f96a3b;
+  --accent-d: #e04f22;
+  --accent-l: #fb8a5e;
+  --accent-glow: rgba(249, 106, 59, 0.32);
+  --accent-dim: rgba(249, 106, 59, 0.12);
   --border: rgba(255, 255, 255, 0.07);
-  --border-b: rgba(37, 99, 235, 0.28);
+  --border-b: rgba(249, 106, 59, 0.28);
   --txt: #eef0f6;
   --txt2: #8896ab;
   --txt3: #3d4f67;
@@ -56,7 +57,7 @@
 }
 
 .landing ::selection {
-  background: rgba(37, 99, 235, 0.35);
+  background: rgba(249, 106, 59, 0.35);
   color: var(--txt);
 }
 
@@ -67,7 +68,7 @@
   background: var(--bg);
 }
 .landing ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--blue-l), var(--blue));
+  background: linear-gradient(180deg, var(--accent-l), var(--accent));
   border-radius: 4px;
 }
 

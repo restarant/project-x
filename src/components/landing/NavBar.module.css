@@ -189,7 +189,7 @@
 }
 
 .menuClose:hover {
-  color: var(--blue-l);
+  color: var(--accent-l);
 }
 
 /* Center glass panel — nav only */
@@ -302,7 +302,7 @@
 }
 
 .localeActive {
-  color: var(--blue-l);
+  color: var(--accent-l);
 }
 
 @media (min-width: 901px) {

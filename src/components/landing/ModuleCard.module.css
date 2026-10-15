@@ -19,7 +19,7 @@
 }
 
 .highlighted {
-  background: linear-gradient(160deg, var(--blue-dim) 0%, rgba(37, 99, 235, 0.04) 100%);
+  background: linear-gradient(160deg, var(--accent-dim) 0%, rgba(249, 106, 59, 0.04) 100%);
   border-color: var(--border-b);
 }
 
@@ -46,7 +46,7 @@
 
 .link {
   font-size: 12px;
-  color: var(--blue-l);
+  color: var(--accent-l);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;

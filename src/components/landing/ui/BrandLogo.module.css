@@ -9,18 +9,18 @@
 .mark {
   width: 32px;
   height: 32px;
-  background: linear-gradient(145deg, var(--blue-l), var(--blue));
+  background: linear-gradient(145deg, var(--accent-l), var(--accent));
   border-radius: var(--radius-sm);
   display: grid;
   place-items: center;
   font-size: 15px;
-  box-shadow: 0 4px 16px var(--blue-glow);
+  box-shadow: 0 4px 16px var(--accent-glow);
   transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
 
 .logo:hover .mark {
   transform: scale(1.05) rotate(-3deg);
-  box-shadow: 0 6px 24px var(--blue-glow);
+  box-shadow: 0 6px 24px var(--accent-glow);
 }
 
 .name {
@@ -30,7 +30,7 @@
 }
 
 .accent {
-  color: var(--blue-l);
+  color: var(--accent-l);
 }
 
 .sm .mark {

@@ -1,11 +1,11 @@
 .wrap {
   background: var(--surface);
-  border: 1px solid rgba(37, 99, 235, 0.25);
+  border: 1px solid rgba(249, 106, 59, 0.25);
   border-radius: var(--radius-lg);
   padding: 12px;
   box-shadow:
     0 32px 100px rgba(0, 0, 0, 0.65),
-    0 0 80px var(--blue-dim),
+    0 0 80px var(--accent-dim),
     0 0 0 1px rgba(255, 255, 255, 0.04) inset;
   animation: float 6s ease-in-out infinite;
 }
@@ -61,7 +61,7 @@
 .badge {
   width: 20px;
   height: 20px;
-  background: linear-gradient(145deg, var(--blue-l), var(--blue));
+  background: linear-gradient(145deg, var(--accent-l), var(--accent));
   border-radius: 5px;
   display: grid;
   place-items: center;
@@ -98,7 +98,7 @@
 .sidebarIcon {
   width: 22px;
   height: 22px;
-  background: var(--blue);
+  background: var(--accent);
   border-radius: 5px;
   display: grid;
   place-items: center;
@@ -120,8 +120,8 @@
 }
 
 .active {
-  background: var(--blue-dim);
-  color: var(--blue-l);
+  background: var(--accent-dim);
+  color: var(--accent-l);
   border: 1px solid var(--border-b);
 }
 
@@ -199,8 +199,8 @@
 .liveBadge {
   font-family: var(--font-space-mono), monospace;
   font-size: 8px;
-  color: var(--blue-l);
-  background: var(--blue-dim);
+  color: var(--accent-l);
+  background: var(--accent-dim);
   border: 1px solid var(--border-b);
   padding: 2px 8px;
   border-radius: 100px;
@@ -265,8 +265,8 @@
   color: var(--amber);
 }
 .statusCook {
-  background: rgba(37, 99, 235, 0.14);
-  color: var(--blue-l);
+  background: rgba(249, 106, 59, 0.14);
+  color: var(--accent-l);
 }
 
 @media (max-width: 900px) {

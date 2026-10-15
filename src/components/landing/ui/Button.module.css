@@ -17,7 +17,7 @@
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--blue-l);
+  outline: 2px solid var(--accent-l);
   outline-offset: 2px;
 }
 
@@ -25,12 +25,12 @@
   padding: 8px 18px;
   border: 1px solid var(--border-b);
   font-size: 13px;
-  color: var(--blue-l);
+  color: var(--accent-l);
   background: transparent;
 }
 
 .ghost:hover {
-  background: var(--blue-dim);
+  background: var(--accent-dim);
   transform: translateY(-1px);
 }
 
@@ -40,13 +40,13 @@
   font-size: 13px;
   font-weight: 700;
   color: white;
-  background: var(--blue);
-  box-shadow: 0 0 24px var(--blue-glow);
+  background: var(--accent);
+  box-shadow: 0 0 24px var(--accent-glow);
 }
 
 .fill:hover {
-  background: var(--blue-l);
-  box-shadow: 0 0 36px var(--blue-glow);
+  background: var(--accent-l);
+  box-shadow: 0 0 36px var(--accent-glow);
   transform: translateY(-1px);
 }
 
@@ -57,14 +57,14 @@
   font-size: 14px;
   font-weight: 700;
   color: white;
-  background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
-  box-shadow: 0 4px 24px var(--blue-glow), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-d) 100%);
+  box-shadow: 0 4px 24px var(--accent-glow), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
 }
 
 .primary:hover {
-  background: linear-gradient(135deg, var(--blue-l) 0%, var(--blue) 100%);
+  background: linear-gradient(135deg, var(--accent-l) 0%, var(--accent) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 40px var(--blue-glow);
+  box-shadow: 0 8px 40px var(--accent-glow);
 }
 
 .secondary {
@@ -97,6 +97,6 @@
 }
 
 .pricing:hover {
-  border-color: var(--blue-l);
+  border-color: var(--accent-l);
   color: var(--txt);
 }

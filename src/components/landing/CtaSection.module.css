@@ -6,7 +6,7 @@
   position: absolute;
   width: 900px;
   height: 520px;
-  background: radial-gradient(ellipse, rgba(37, 99, 235, 0.22) 0%, transparent 68%);
+  background: radial-gradient(ellipse, rgba(249, 106, 59, 0.22) 0%, transparent 68%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -45,7 +45,7 @@
 
 .title em {
   font-style: normal;
-  color: var(--blue-l);
+  color: var(--accent-l);
 }
 
 .text {

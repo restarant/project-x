@@ -20,7 +20,7 @@
 .orb1 {
   width: 720px;
   height: 520px;
-  background: rgba(37, 99, 235, 0.16);
+  background: rgba(249, 106, 59, 0.16);
   top: -80px;
   right: -100px;
   animation: drift1 14s ease-in-out infinite;
@@ -29,7 +29,7 @@
 .orb2 {
   width: 400px;
   height: 400px;
-  background: rgba(37, 99, 235, 0.08);
+  background: rgba(249, 106, 59, 0.08);
   bottom: 20px;
   left: -80px;
   animation: drift2 18s ease-in-out infinite;
@@ -38,7 +38,7 @@
 .orb3 {
   width: 200px;
   height: 200px;
-  background: rgba(59, 130, 246, 0.12);
+  background: rgba(251, 138, 94, 0.12);
   top: 40%;
   left: 45%;
   animation: drift2 12s ease-in-out infinite reverse;
@@ -87,7 +87,7 @@
 
 .title em {
   font-style: normal;
-  background: linear-gradient(135deg, var(--txt) 0%, var(--blue-l) 100%);
+  background: linear-gradient(135deg, var(--txt) 0%, var(--accent-l) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

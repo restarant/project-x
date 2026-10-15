@@ -19,15 +19,15 @@
 }
 
 .hot {
-  background: linear-gradient(155deg, #1d4ed8 0%, #2563eb 55%, #3b82f6 100%);
-  border-color: rgba(147, 197, 253, 0.4);
-  box-shadow: 0 24px 60px rgba(37, 99, 235, 0.35);
+  background: linear-gradient(155deg, var(--accent-d) 0%, var(--accent) 55%, var(--accent-l) 100%);
+  border-color: rgba(253, 186, 160, 0.4);
+  box-shadow: 0 24px 60px rgba(249, 106, 59, 0.35);
   transform: scale(1.02);
 }
 
 .hot:hover {
   transform: scale(1.02) translateY(-4px);
-  box-shadow: 0 28px 70px rgba(37, 99, 235, 0.45);
+  box-shadow: 0 28px 70px rgba(249, 106, 59, 0.45);
 }
 
 .badge {
@@ -162,17 +162,17 @@
 }
 
 .cta:hover {
-  border-color: var(--blue-l);
+  border-color: var(--accent-l);
   color: var(--txt);
 }
 
 .ctaHot {
   background: white;
-  color: var(--blue);
+  color: var(--accent);
   border: none;
 }
 
 .ctaHot:hover {
-  background: #eff6ff;
-  color: var(--blue);
+  background: #fff1eb;
+  color: var(--accent);
 }

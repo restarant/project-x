@@ -2,6 +2,7 @@
   "name": "project-x",
   "version": "0.1.1",
   "private": true,
+  "homepage": "https://project-x-jet-seven.vercel.app/",
   "scripts": {
     "dev": "next dev --turbopack",
     "dev:clean": "rm -rf .next && next dev --turbopack",
